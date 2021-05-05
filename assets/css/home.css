@@ -1,0 +1,22 @@
+.animationload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 999999;
+}
+
+.loader {
+    width: 366px;
+    height: 163px;
+    font-size: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url(http://piglog.tempsite.ws/assets/images/piglog.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+}

@@ -1,0 +1,55 @@
+﻿<?php
+$this->headLink()->appendStylesheet($this->BaseUrl('adm/default/css/contatos.css'));
+$this->headScript()->appendFile($this->BaseUrl('adm/default/js/contato.js'));
+?>
+<div class="row">
+    <div class="col-md-12">
+        <!-- Form Elements -->
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Contato</h3>
+            </div>
+            <div id="page-inner">
+              
+                    <form id="form" enctype="multipart/form-data" nome="form" action="/admin/contatos/visualizar" method="post">
+                        <div class="dados">
+                            <span>Nome:</span><br /><?= $this->dados['nome']; ?><br /><br />
+                            <span>E-mail:</span><br /><?= $this->dados['email']; ?><br /><br />
+                            <span>Assunto:</span><br /><?= $this->dados['assunto']; ?><br /><br />
+                            
+                            <? if(!empty($this->dados['param'])){?>
+                            <span>Link de Acesso:</span><br /><a target="_blank" href="http://<?php echo $_SERVER['HTTP_HOST'];?>/vendas/veiculo/param/<?=$this->dados['param']; ?>">
+                                http://<?php echo $_SERVER['HTTP_HOST'];?>/vendas/veiculo/param/<?=$this->dados['param']; ?>
+                                </a><br /><br />
+                            <? } ?>
+                            
+                            <span>Mensagem:</span><br /><?= preg_replace('/<[^>]*>/', ' ', $this->dados['mensagem']); ?><br /><br />
+                            <? $array = explode(',', $this->dados['ip']);
+                                if($array){
+                                    $this->dados['ip'] = $array[0];
+                                }else{
+                                    $this->dados['ip'] = $this->dados['ip'];
+                                }
+                              ?>
+                            <span>IP:</span><br />
+                                <a href="http://www.localizaip.com.br/localizar-ip.php?ip=<?= $this->dados['ip']; ?>" target="_blank">
+                                <?= $this->dados['ip']; ?>
+                                </a>  
+                                  <br /><br />
+                        </div>
+
+                        <div class="resposta">  
+                            <label for="resposta">Sua Resposta:</label></BR>
+                            <input type="hidden" name="id" value="<?= $this->dados['id']; ?>"/>
+                            <textarea name="resposta" id="resposta" value="<?= $this->dados['resposta']; ?>" placeholder="DIGITE UMA MENSAGEM!" rows="5"><?= $this->dados['resposta']; ?></textarea> 
+                            <input type="submit" class="btn btn-success pull-right" value="Enviar">
+                        </div>
+                    </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

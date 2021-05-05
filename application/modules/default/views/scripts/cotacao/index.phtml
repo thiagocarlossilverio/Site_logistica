@@ -1,0 +1,34 @@
+<div class="contact-form">
+    <h2>COTAÇÃO DE FRETE</h2>
+    <div class="cotacao">
+        <span></span>
+    </div>
+    <div class="paragraph">
+        <p style="color: #FFF;">Preencha o formulário abaixo para obter uma cotação de frete. A resposta com os preços e outras informações solicitadas, serão enviadas o mais rápido possível. </p>
+    </div>
+    <form action="<?=$this->url(array('controller' => 'cotacao'),'default', TRUE);?>" method="post">
+        
+        <div>
+            <input type="text" placeholder="Nome" name="nome" required>
+            <input type="text" placeholder="Telefone" name="telefone" maxlength="14" onkeypress="mascara(this)">
+            <input type="text" placeholder="Email" name="email" required>
+        </div>>
+        
+        <div>
+            <input type="text" placeholder="Empresa" name="empresa" required>
+            <input type="text" placeholder="CNPJ" id="cnpj" name="cnpj">
+            <input type="text" placeholder="IE" name="ie">
+        </div>>
+       
+        <div>
+            <input type="text" placeholder="Origem" name="origem" required>
+            <input type="text" placeholder="Destino" name="destino" required>
+            <input type="text" placeholder="Produto"name="tipo_carga" style="width: 230px;margin-right: 12px;" required>
+            <input type="text" id="qtd" placeholder="Quantidade" name="quantidade" required="" style="width: 100px;">
+        </div>
+      
+        <div class="clearfix"> </div>
+        <textarea placeholder="Informações Adicionais" name="adicional" required=" "></textarea>
+        <input type="submit" value="enviar">
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<?php $controller = Zend_Controller_Front::getInstance()->getRequest()->getControllerName();?>
+<!-- header -->
+<div class="header">
+    <div class="logo">
+        <a href="/"><img  id="logo" src="<?=$this->BaseUrl('assets/images/pig.png');?>" class="img-responsive" alt="Pig Log Transportes"/></a>
+    </div>
+
+    
+    <div class="logo-right">
+        <span class="menu">
+            <img src="<?=$this->BaseUrl('assets/images/menu.png');?>" alt=" "/>
+        </span>
+        <ul class="nav1">
+            <li <? if($controller == 'index'){ echo 'class="cap"';}?>><a href="<?=$this->url(array('controller'=>'index'),'default', TRUE);?>" class="act">HOME<span>INÍCIO</span></a></li>
+            <li <? if($controller == 'sobre'){ echo 'class="cap"';}?>><a href="<?=$this->url(array('controller'=>'sobre'),'default', TRUE);?>" class="act1">SOBRE<span>CONHEÇA NOS</span></a></li>
+            <li <? if($controller == 'galeria'){ echo 'class="cap"';}?>><a href="<?=$this->url(array('controller'=>'galeria'),'default', TRUE);?>" class="act2">GALERIA<span>NOSSA FROTA</span></a></li>
+            <li <? if($controller == 'vendas'){ echo 'class="cap"';}?>><a href="<?=$this->url(array('controller'=>'vendas'),'default', TRUE);?>" class="act4">VENDAS<span>VEICULOS PARA VENDA</span></a></li>
+            <li <? if($controller == 'cotacao'){ echo 'class="cap"';}?>><a href="<?=$this->url(array('controller'=>'cotacao'),'default', TRUE);?>" class="act6">COTAÇÃO<span>COTAÇÃO DE FRETE</span></a></li>
+            <li <? if($controller == 'contato'){ echo 'class="cap"';}?>><a href="<?=$this->url(array('controller'=>'contato'),'default', TRUE);?>" class="act5">CONTATO<span>FALE CONOSCO</span></a></li>
+        </ul>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<!-- //header -->

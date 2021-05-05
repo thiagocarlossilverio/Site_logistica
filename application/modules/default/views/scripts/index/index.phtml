@@ -1,0 +1,60 @@
+﻿<?php
+$this->headLink()->appendStylesheet($this->BaseUrl('assets/css/home.css'));
+$this->headScript()->appendFile($this->BaseUrl('assets/js/home.js'));
+?>
+<div class="banner">
+    <?if($this->banners){?>
+        <div id="slider">
+            <?foreach($this->banners as $banner){?>
+                <a href="<? if(!empty($banner['link'])){ echo $banner['link'];}else{ echo '#';}?>" target="_blank">
+                    <img class="img-thumbnail" src="<?=$this->Img('imagens/banners/'.$banner['imagem'], 1150, 860); ?>">
+                    <span><?=  ucfirst($banner['titulo']);?></span>
+                </a>
+            <? }?>    
+        </div>
+    <? }?> 
+</div>
+
+<div class="clearfix"></div>
+
+<div id="about" class="work">
+    <div class="buy">
+        <div class="buy-text">
+            <h3>Bem Vindo</h3>
+            <p><?=$this->dados['conteudo'];?></p>
+        </div>
+        <div class="buy-now">
+            <a href="<?=$this->url(array('controller'=>'sobre'),'default', TRUE);?>" class="hvr-bounce-to-left">Ver Mais...</a>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="line">
+        <span> </span>
+    </div>
+    <? if($this->vendas){?>
+    <div class="awesome">
+        <div class="awesome-left">
+            <h3>Alguns veículos para<span> vendas.</span></h3>
+            <p></p>
+            <a href="<?=$this->url(array('controller'=>'vendas'),'default', TRUE);?>" class="hvr-bounce-to-left1">Ver Mais...</a>
+        </div>
+        
+        <div class="awesome-right" style="width: 70%!important;">
+            <?foreach($this->vendas as $venda){?>
+            <div class="awesome-right-grid" style="width: 28%; text-align: center; position: relative;">
+                <a href="<?=$this->url(array('controller'=>'vendas', 'action'=>'veiculo', 'param' => $venda['id']),'default', TRUE);?>" class="b-link-stripe b-animate-go"  title="">
+                    <img class="one" src="<?= $this->Img('imagens/vendas/'.$venda['imagem'], 220, 160); ?>" alt="<?=$venda['modelo'];?>" title="<?=$venda['modelo'];?>" />
+                    <div class="b-wrapper">
+                        <h2 class="b-animate b-from-left    b-delay03 ">
+                            <img class="img-responsive" src="assets/images/plus.png" class="zoom" alt="<?=$venda['modelo'];?>"/>
+                        </h2>
+                    </div>
+                </a>
+            </div>
+            <? }?>
+            <div class="clearfix"> </div>
+        </div> 
+        <div class="clearfix"> </div>
+    </div>
+    <? }?>
+</div>

@@ -1,0 +1,10 @@
+.modal {
+    overflow: initial!important; 
+    overflow-y: initial!important;
+}
+.bx-wrapper {
+    margin: 0 auto 4px!important;
+}
+.bx-wrapper, .bx-viewport {
+    height: 788px !important; 
+}

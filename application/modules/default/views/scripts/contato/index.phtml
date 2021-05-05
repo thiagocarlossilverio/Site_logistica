@@ -1,0 +1,56 @@
+<!-- contact -->
+<div class="contact">
+    <h3>COMO NOS ENCONTRAR</h3>
+    <div class="car">
+        <span> </span>
+    </div>
+    <div class="map">
+        <div class="map_google">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12207.117232033486!2d-49.9225276511651!3d-24.547830482990594!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDMzJzAwLjYiUyA0OcKwNTUnMTUuNCJX!5e0!3m2!1spt-BR!2sbr!4v1468871561806" frameborder="0" style="border:0"></iframe>
+        </div>
+    </div>
+    <div class="paragraph">
+<!--        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+            Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. 
+            Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus 
+            et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.
+            Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, 
+            luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. 
+            Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, 
+            consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. 
+            Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi
+            et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.</p>-->
+    </div>
+    <div class="contact-grids">
+        <div class="contact-grid">
+            <h4>Localização</h4>
+            <p class="dot">Rodovia PR 151, KM 258
+                <span>Piraí do Sul – PR</span>
+        </div>
+        <div class="contact-grid">
+            <h4>TELEFONES</h4>
+            <p class="phone">(42)3237-2068.
+                <span>(42) 3237-3069.</span>
+        </div>
+        <div class="contact-grid">
+            <h4>EMAIL</h4>
+            <p class="message"><a href="mailto:gerencia@piglog.com.br">gerencia@piglog.com.br</a></p>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<div class="contact-form">
+    <h3>CONTATO</h3>
+    <div class="mes-fig">
+        <span> </span>
+    </div>
+    <form action="<?= $this->url(array('controller' => 'contato'), 'default', TRUE); ?>" method="post">
+        <input type="text" placeholder="Nome" name="nome" required=" ">
+        <input type="text" placeholder="Email" name="email" required=" ">
+        <input type="text" placeholder="Assunto" name="assunto" required=" ">
+        <div class="clearfix"> </div>
+        <textarea placeholder="Mensagem" name="mensagem" required=" "></textarea>
+        <input type="submit" value="enviar">
+    </form>
+</div>
+<!-- //contact -->
